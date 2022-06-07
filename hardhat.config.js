@@ -4,21 +4,20 @@ require('@nomiclabs/hardhat-etherscan');
 require('dotenv').config();
 require('solidity-coverage');
 require('hardhat-deploy');
-// You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
 
 const MAINNET_RPC_URL =
   process.env.MAINNET_RPC_URL || process.env.ALCHEMY_MAINNET_RPC_URL || '';
+
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || '';
+
 const KOVAN_RPC_URL =
   process.env.KOVAN_RPC_URL ||
   'https://eth-mainnet.alchemyapi.io/v2/your-api-key';
+
 const PRIVATE_KEY =
   process.env.PRIVATE_KEY ||
   '0x11ee3108a03081fe260ecdc106554d09d9d1209bcafd46942b10e02943effc4a';
+
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || '';
 
 module.exports = {
@@ -65,8 +64,8 @@ module.exports = {
   },
   namedAccounts: {
     deployer: {
-      default: 0, // here this will by default take the first account as deployer
-      1: 0, // similarly on mainnet it will take the first account as deployer. Note though that depending on how hardhat network are configured, the account 0 on one network can be different than on another
+      default: 0,
+      1: 0,
     },
   },
 };
